@@ -22,7 +22,8 @@ sort([H|[]]) ->
     [H];
 sort(Array) ->
     {L, R, Priv} = partition(Array),
-    sort(L) ++ [Priv] ++ sort(R).
+    % 数组 ++ 效率为O(N)，如何优化？
+    sort(L) ++ [Priv | sort(R)].
 
 generate_random_array(0, Result) ->
     Result;

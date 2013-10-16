@@ -26,6 +26,7 @@ public:
             }
         }
         // 拆分区间
+        // TODO: 拆分区间也应该用类似于二分的方法来查找，否则对于[pivot, n)就没必要二分查找了,
         int pivot = n - 1;
         for (int i=n-1; i>=0 && pivot > 0; --i) {
             if(A[pivot-1] < A[i]) {
